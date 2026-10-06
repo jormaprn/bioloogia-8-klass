@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8. klassi bioloogia – selgrootud</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#657089;--accent:#356ae6;--accent2:#16a085;--bad:#d94b4b;--good:#18865b;--line:#dfe5ef;--soft:#eef3ff}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(135deg,#183b8f,#356ae6);color:#fff;padding:28px 20px 34px}
+header .wrap,main{max-width:1100px;margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;opacity:.8;font-weight:800}
+h1{margin:7px 0;font-size:clamp(28px,5vw,44px)} header p{margin:5px 0 0;opacity:.9}
+nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 10px #0000000a}
+.navin{max-width:1100px;margin:auto;display:flex;gap:7px;overflow:auto;padding:8px 12px}
+nav button{white-space:nowrap;border:0;background:transparent;padding:10px 14px;border-radius:10px;font-weight:700;color:var(--muted);cursor:pointer}
+nav button.active{background:var(--soft);color:var(--accent)}
+main{padding:24px 16px 60px}.section{display:none}.section.active{display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 5px 18px #1a315a0a}
+.card h3{margin-top:0}.pill{display:inline-block;background:#eaf8f3;color:var(--good);font-size:12px;font-weight:800;padding:5px 9px;border-radius:99px}
+.small{font-size:14px;color:var(--muted)} ul{padding-left:20px;line-height:1.65}
+.compare{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden}
+.compare th,.compare td{padding:12px;border:1px solid var(--line);text-align:left;vertical-align:top}
+.compare th{background:#edf2ff}.compare tr:nth-child(even) td{background:#fafbfd}
+button.primary,.btn{border:0;border-radius:11px;background:var(--accent);color:#fff;padding:11px 16px;font-weight:800;cursor:pointer}
+button.secondary{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:11px;padding:10px 14px;font-weight:700;cursor:pointer}
+button:hover{filter:brightness(.97)} .actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+.progress{height:9px;background:#e5eaf2;border-radius:99px;overflow:hidden}.progress>div{height:100%;background:var(--accent);width:0}
+.question{font-size:21px;font-weight:800;line-height:1.35}.answers{display:grid;gap:9px;margin-top:16px}
+.answer{border:1px solid var(--line);background:#fff !important;color:#172033 !important;text-align:left;padding:13px;border-radius:11px;cursor:pointer;font-size:15px;min-height:52px;display:block;visibility:visible;opacity:1}.answer strong,.answer span{color:#172033 !important;visibility:visible}
+.answer.correct{border-color:#68bd98;background:#eaf8f1}.answer.wrong{border-color:#e48787;background:#fff0f0}
+.feedback{margin-top:14px;padding:13px;border-radius:11px;background:#f4f6fa}.score{font-size:42px;font-weight:900}.hidden{display:none}
+.flash{min-height:220px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;cursor:pointer}
+.flash .big{font-size:30px;font-weight:900;margin:14px 0}.tag{color:var(--accent);font-weight:800}
+.matchrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}.matchrow select{padding:11px 12px;border:1px solid var(--line);border-radius:9px;background:#fff !important;color:#172033 !important;font-size:15px;min-height:49px;display:block;visibility:visible;opacity:1}.matchrow select option{background:#fff !important;color:#172033 !important}
+.badge{font-size:12px;padding:4px 7px;border-radius:7px;background:#eee}.good{color:var(--good)}.bad{color:var(--bad)}
+footer{text-align:center;color:var(--muted);font-size:12px;margin-top:25px}
+@media(max-width:600px){.compare{font-size:13px}.compare th,.compare td{padding:8px}.question{font-size:18px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="eyebrow">8. klass · peatükid 20–23</div>
+<h1>Selgrootud – KT treening</h1>
+<p>Õpi → kontrolli → korda vead → tee test uuesti.</p>
+</div></header>
+
+<nav><div class="navin">
+<button class="tab active" data-tab="start">🏠 Alusta</button>
+<button class="tab" data-tab="learn">📚 Õppematerjal</button>
+<button class="tab" data-tab="cards">🧠 Mälumäng</button>
+<button class="tab" data-tab="quiz">🎯 Test</button>
+<button class="tab" data-tab="match">🔗 Sobita</button>
+</div></nav>
+
+<main>
+<section id="start" class="section active">
+<div class="card">
+<h2>Kontrolltööks pead oskama</h2>
+<div class="grid">
+<div><span class="pill">01</span><h3>Selgroogsed vs selgrootud</h3><p>Vereringe, toes, keha sümmeetria, närvisüsteem.</p></div>
+<div><span class="pill">02</span><h3>Käsnad</h3><p>Tunnused, tähtsus looduses ja inimesele.</p></div>
+<div><span class="pill">03</span><h3>Ainuõõssed</h3><p>Neli rühma, ehituse sarnasused ja erinevused, korallrifid.</p></div>
+<div><span class="pill">04</span><h3>Okasnahksed</h3><p>Elupaik ja iseloomulikud tunnused.</p></div>
+<div><span class="pill">05</span><h3>Ussid</h3><p>Kolm põhirühma ja nende võrdlus.</p></div>
+<div><span class="pill">06</span><h3>Limused</h3><p>Tigu vs karp ning tähtsus looduses ja inimesele.</p></div>
+</div>
+<div class="actions"><button class="primary" onclick="showTab('learn')">Alusta õppimist →</button><button class="secondary" onclick="showTab('quiz')">Kohe testi</button></div>
+</div>
+<div class="card" style="margin-top:14px">
+<h3>💡 Hea nipp</h3>
+<p>Kui vastust ei tea, ära vaata kohe materjali. Proovi kõigepealt ise meenutada ja alles siis kontrolli. Nii jääb info paremini meelde.</p>
+</div>
+</section>
+
+<section id="learn" class="section">
+<h2>📚 Õppematerjal</h2>
+<div class="card">
+<h3>Selgroogsed ja selgrootud</h3>
+<table class="compare"><tr><th>Tunnus</th><th>Selgroogsed</th><th>Selgrootud</th></tr>
+<tr><td>Toes</td><td>Sisemine toes, mille oluline osa on selgroog.</td><td>Selgroog puudub; toes võib olla nt kest, välisskelett või hüdroskelett.</td></tr>
+<tr><td>Vereringe</td><td>Suletud vereringe: veri liigub veresoonte süsteemis.</td><td>Väga erinev: mõnel suletud, paljudel avatud või puudub eraldi vereringesüsteem.</td></tr>
+<tr><td>Keha sümmeetria</td><td>Enamasti kahepoolne.</td><td>Võib olla kahepoolne, kiirjas või puududa kindel sümmeetria.</td></tr>
+<tr><td>Närvisüsteem</td><td>Aju ja seljaaju moodustavad keskse närvisüsteemi.</td><td>Väga erinev; nt ussidel närvitüved, ainuõõssetel närvivõrk.</td></tr></table>
+</div>
+<div class="grid" style="margin-top:14px">
+<div class="card"><h3>🧽 Käsnad</h3><ul><li>Elavad peamiselt vees ja kinnituvad aluspinnale.</li><li>Kehas on palju poore – vesi liigub läbi keha.</li><li>Filtreerivad veest toiduosakesi.</li><li>Looduses on nad olulised vee filtreerijad ja elupaiga pakkujad.</li><li>Inimene kasutab mõningaid käsnu nt puhastamiseks ja uurib nende toodetud bioaktiivseid aineid.</li></ul></div>
+<div class="card"><h3>🌊 Ainuõõssed</h3><p>Neli tuntud rühma: <b>hüdralised, karikloomad, korallid ja merianemoonid</b>.</p><p>Ühine: kombitsad, kõrverakud, üks kehaõõs, kuhu avaneb suu. Erinevad peamiselt keha kuju, eluviisi ja kolooniate moodustamise poolest.</p></div>
+<div class="card"><h3>🪸 Korallrifid</h3><p>Korallid moodustavad lubiainest skelette. Paljude korallide kolooniad kuhjuvad aja jooksul suureks rifiks.</p><p>Rifid pakuvad elupaika tohutule hulgale liikidele ning kaitsevad rannikuid lainetuse eest. Neid ohustavad eriti merevee soojenemine ja korallide pleekimine, samuti reostus ja hapestumine.</p></div>
+<div class="card"><h3>⭐ Okasnahksed</h3><p>Meres elavad loomad, nt <b>meritähed, merisiilikud, merikurgid ja sulgjad</b>. Täiskasvanutel on sageli kiirjas sümmeetria, nahk sisaldab lubiplaate/okiseid ning neil on veesoonkond.</p></div>
+<div class="card"><h3>🪱 Ussid</h3><p>Ussid on eri loomade rühmad, mitte üksainus süstemaatiline rühm. Koolis võrreldakse sageli <b>lameusse, ümarusse ja rõngusse</b>.</p><ul><li><b>Lameussid:</b> lame keha, lihtsam ehitus.</li><li><b>Ümarussid:</b> silindriline keha, sageli teravnenud otsad.</li><li><b>Rõngussid:</b> keha koosneb lülidest; nt vihmauss.</li></ul></div>
+<div class="card"><h3>🐌 Limused</h3><p>Enamikul on pehme keha. Kojaga teol on tavaliselt üks spiraalne koda; karbil on kahe poolega koda, mis ümbritseb keha.</p><p>Teod ja karbid on olulised toiduahelates. Karbid filtreerivad vett ning mõningaid limuseid kasutatakse toiduks ja pärlite saamiseks.</p></div>
+</div>
+</section>
+
+<section id="cards" class="section">
+<h2>🧠 Mälumängukaardid</h2>
+<p class="small">Vajuta kaardile, mõtle vastus välja ja pööra kaart ümber.</p>
+<div class="card flash" id="flash" onclick="flipCard()">
+<div class="tag" id="flashTag">TEEMA</div><div class="big" id="flashQ"></div><div id="flashA" class="hidden"></div>
+<div class="small" id="flashHint">Vajuta, et vastust näha</div>
+</div>
+<div class="actions"><button class="secondary" onclick="prevCard()">← Eelmine</button><button class="primary" onclick="nextCard()">Järgmine →</button></div>
+</section>
+
+<section id="quiz" class="section">
+<h2>🎯 Harjutustest</h2>
+<div class="card">
+<div style="display:flex;justify-content:space-between;gap:10px"><b id="qCount">Küsimus 1 / 20</b><span id="qScore">0 punkti</span></div>
+<div class="progress" style="margin:12px 0 20px"><div id="bar"></div></div>
+<div class="question" id="qText"></div>
+<div class="answers" id="answers"></div>
+<div class="feedback hidden" id="feedback"></div>
+<div class="actions"><button class="primary hidden" id="nextQ" onclick="nextQuestion()">Järgmine küsimus →</button></div>
+</div>
+
+<div class="card" style="margin-top:14px">
+<h3>📖 Vastused ja selgitused</h3>
+<p class="small">Siin saad kontrollida kõigi kontrolltöö küsimuste õigeid vastuseid. Proovi enne ise vastata.</p>
+<div id="answerKey"></div>
+</div>
+
+<div class="card hidden" id="result" style="margin-top:14px;text-align:center">
+<h2>Test tehtud! 🎉</h2><div class="score" id="finalScore"></div><p id="finalText"></p>
+<div class="actions" style="justify-content:center"><button class="primary" onclick="restartQuiz()">Proovi uuesti</button><button class="secondary" onclick="showTab('learn')">Korda materjali</button></div>
+<div id="mistakes" style="text-align:left;margin-top:18px"></div>
+</div>
+</section>
+
+<section id="match" class="section">
+<h2>🔗 Sobita mõiste ja kirjeldus</h2>
+<div class="card"><p>Vali iga mõiste juurde õige kirjeldus.</p><div id="matchArea"></div><button class="primary" onclick="checkMatch()">Kontrolli vastuseid</button><div id="matchResult" class="feedback hidden"></div></div>
+</section>
+<footer>Harjutuskeskkond · 8. klass · bioloogia · peatükid 20–23</footer>
+</main>
+
+<script>
+const cards=[
+["Selgroogsed vs selgrootud","Mis on kõige olulisem erinevus toeses?","Selgroogsetel on selgroog; selgrootutel selgroog puudub."],
+["Käsnad","Kuidas käsnad toituvad?","Nad filtreerivad veest toiduosakesi."],
+["Ainuõõssed","Nimeta neli ainuõõssete rühma.","Hüdralised, karikloomad, korallid ja merianemoonid."],
+["Ainuõõssed","Mis on ainuõõssetele iseloomulik kaitse- ja püügirakk?","Kõrverakk."],
+["Korallrifid","Miks on korallrifid olulised?","Need pakuvad elupaika paljudele liikidele ja aitavad kaitsta rannikut."],
+["Okasnahksed","Kus okasnahksed elavad?","Meres."],
+["Ussid","Millised kolm ussirühma on koolis olulised?","Lameussid, ümarussid ja rõngussid."],
+["Rõngussid","Mis eristab rõngusse teistest ussidest?","Keha on jaotunud lülideks."],
+["Limused","Mis vahe on teo ja karbi kojaga?","Teol on tavaliselt üks spiraalne koda; karbil kahe poolega koda."],
+["Karbid","Mida teevad paljud karbid veekogus?","Filtreerivad vett ja eemaldavad sellest toiduosakesi."]
+];
+let cardIndex=0,flipped=false;
+function renderCard(){let c=cards[cardIndex];flashTag.textContent=c[0];flashQ.textContent=flipped?c[2]:c[1];flashHint.textContent=flipped?"Vajuta, et küsimust näha":"Vajuta, et vastust näha"}
+function flipCard(){flipped=!flipped;renderCard()} function nextCard(){cardIndex=(cardIndex+1)%cards.length;flipped=false;renderCard()} function prevCard(){cardIndex=(cardIndex-1+cards.length)%cards.length;flipped=false;renderCard()} renderCard();
+
+const qs=[
+["Milline tunnus on selgroogsetele iseloomulik?","Selgroog","Kõrverakud","Koda","Kiirjas sümmeetria",0,"Selgroog on selgroogsete iseloomulik toesetunnus."],
+["Milline väide selgrootute vereringe kohta on õige?","Kõigil on avatud vereringe","Kõigil puudub vereringe","Vereringe ehitus on eri rühmades erinev","Kõigil on neljakambriline süda",2,"Selgrootutel on vereringe väga erinev; mõnel on avatud, mõnel suletud vereringe, mõnel eraldi vereringesüsteem puudub."],
+["Mida teevad käsnad toitudes?","Jahivad kalu","Filtreerivad veest osakesi","Söövad ainult taimi","Fotosünteesivad",1,"Käsnad filtreerivad läbi keha voolavast veest toiduosakesi."],
+["Milline EI ole ainuõõssete rühm?","Korallid","Karikloomad","Hüdralised","Rõngussid",3,"Rõngussid kuuluvad usside hulka."],
+["Mis on ainuõõssetele iseloomulik?","Kõrverakud","Selgroog","Kahe poolega koda","Lüliline keha",0,"Kõrverakud aitavad ainuõõssetel saaki püüda ja kaitsta end."],
+["Millest korallide lubiskeletid koosnevad?","Kitiinist","Kaltsiumkarbonaadist ehk lubiainest","Rasvast","Ränist",1,"Korallid moodustavad lubiainest skelette, mis võivad moodustada suuri riffe."],
+["Miks korallrifid on hävimisohus?","Merevee soojenemise tõttu","Sest nad elavad ainult jõgedes","Sest nad ei vaja valgust","Sest nad on maismaal",0,"Merevee soojenemine võib põhjustada korallide pleekimist; ohuks on ka reostus ja ookeani hapestumine."],
+["Kus elavad okasnahksed?","Peamiselt meres","Ainult metsas","Ainult magevees","Õhus",0,"Okasnahksed on mereloomad."],
+["Milline loom on okasnahkne?","Meritäht","Vihmauss","Tigu","Hüdra",0,"Meritäht kuulub okasnahksete hulka."],
+["Millised on kolm koolis võrreldavat ussirühma?","Lameussid, ümarussid, rõngussid","Käsnad, korallid, karbid","Teod, karbid, kahepaiksed","Kalad, linnud, imetajad",0,"Lameussid, ümarussid ja rõngussid erinevad keha kuju ja ehituse poolest."],
+["Mis on rõngussidele iseloomulik?","Keha koosneb lülidest","Neil on alati koda","Neil on kõrverakud","Neil on lubist välisskelett",0,"Rõngusside keha on jaotunud lülideks."],
+["Milline keha kuju on ümarussidel?","Silindriline","Täiesti lame","Tähekujuline","Kahepoolse kojaga",0,"Ümarussidel on silindriline, sageli otstest kitsenev keha."],
+["Kuidas erineb teo koda karbi kojast?","Teol on tavaliselt üks spiraalne koda","Teol on alati kahe poolega koda","Karbil on üks spiraalne koda","Kummalgi pole koda",0,"Teo koda on tavaliselt ühes tükis ja spiraalne; karbil koosneb koda kahest poolmest."],
+["Mida teevad paljud karbid veekogudes?","Filtreerivad vett","Toodavad hapnikku nagu taimed","Ehitatavad riffe","Püüavad linde",0,"Paljud karbid filtreerivad vett ja on veekogude ökosüsteemides olulised."],
+["Milline loom on limune?","Tigu","Meritäht","Hüdra","Vihmauss",0,"Tigu kuulub limuste hulka."],
+["Milline loom on käsn?","Käsn","Vihmauss","Merisiilik","Karikloom",0,"Käsnad moodustavad omaette loomarühma."],
+["Milline väide korallriffide kohta on õige?","Need pakuvad elupaiku paljudele liikidele","Need tekivad ainult järvedes","Need koosnevad peamiselt liivast","Need ei mõjuta rannikut",0,"Korallrifid on väga liigirikkad elupaigad ja võivad vähendada lainetuse mõju rannikule."],
+["Milline sümmeetria on täiskasvanud okasnahksetel sageli?","Kiirjas","Ainult kahepoolne","Puudub alati","Kolmeteljeline",0,"Täiskasvanud okasnahksetel on sageli viiekiireline või muu kiirjas sümmeetria."],
+["Milline väide ainuõõssete kohta on õige?","Neil on üks kehaõõs, kuhu avaneb suu","Neil on selgroog","Nende keha koosneb alati lülidest","Neil on alati koda",0,"Ainuõõssetel on seedimisega seotud üks kehaõõs, millel on üks ava."],
+["Miks on käsnad looduses tähtsad?","Nad filtreerivad vett ja pakuvad elupaika","Nad moodustavad selgroo","Nad toodavad karpe","Nad ehitavad metsades pesi",0,"Käsnad filtreerivad vett ning on osa veekogude toiduahelatest ja elupaikadest."]
+];
+let qi=0,score=0,mistakes=[],answered=false;
+function renderQuiz(){
+ if(qi>=qs.length){finishQuiz();return}
+
+ answered=false;
+ const q=qs[qi];
+
+ document.getElementById("qCount").textContent="Küsimus "+(qi+1)+" / "+qs.length;
+ document.getElementById("qScore").textContent=score+" punkti";
+ document.getElementById("bar").style.width=((qi)/qs.length*100)+"%";
+ document.getElementById("qText").textContent=q[0];
+
+ const container=document.getElementById("answers");
+ container.replaceChildren();
+
+ // Each question stores: question, A, B, C, D, correctIndex, explanation.
+ // Build each button using textContent so the answer text cannot disappear
+ // because of HTML parsing/styling.
+ for(let i=0;i<4;i++){
+   const button=document.createElement("button");
+   button.type="button";
+   button.className="answer";
+   button.style.color="#172033";
+   button.style.backgroundColor="#ffffff";
+   button.style.display="block";
+   button.style.width="100%";
+   button.style.minHeight="52px";
+   button.style.visibility="visible";
+   button.style.opacity="1";
+
+   const label=document.createElement("strong");
+   label.style.color="#172033";
+   label.textContent=String.fromCharCode(65+i)+". ";
+
+   const text=document.createElement("span");
+   text.style.color="#172033";
+   text.style.visibility="visible";
+   text.style.opacity="1";
+   text.textContent=String(q[i+1]);
+
+   button.appendChild(label);
+   button.appendChild(text);
+   button.addEventListener("click",function(){ answer(i,button); });
+   container.appendChild(button);
+ }
+
+ document.getElementById("feedback").classList.add("hidden");
+ document.getElementById("nextQ").classList.add("hidden");
+}
+
+function answer(i,btn){
+ if(answered)return; answered=true; const q=qs[qi],all=[...answers.children]; all.forEach(x=>x.disabled=true);
+ if(i===q[5]){score++;btn.classList.add("correct");feedback.innerHTML="<b>Õige! 🎉</b><br>"+q[6]}
+ else{btn.classList.add("wrong");all[q[5]].classList.add("correct");feedback.innerHTML=`<b>Peaaegu!</b><br>${q[6]}<br><span class="small">Õige vastus: <b>${q[q[5]+1]}</b></span>`;mistakes.push(q)}
+ qScore.textContent=`${score} punkti`;feedback.classList.remove("hidden");nextQ.classList.remove("hidden");
+}
+function nextQuestion(){qi++;renderQuiz()}
+function restartQuiz(){qi=0;score=0;mistakes=[];result.classList.add("hidden");renderQuiz()}
+function finishQuiz(){quiz.querySelector(".card").classList.add("hidden");result.classList.remove("hidden");bar.style.width="100%";finalScore.textContent=`${score} / ${qs.length}`;let pct=Math.round(score/qs.length*100);finalText.textContent=pct>=90?"Väga tugev! Kontrolltööks oled hästi valmis.":pct>=75?"Hea töö! Korda veel nõrgemaid teemasid.":pct>=60?"Päris hea algus. Tee test uuesti ja vaata vead üle.":"Korda materjali rahulikult ja tee test uuesti – saad kindlasti paremaks.";
+if(mistakes.length){mistakes.innerHTML="<h3>🔁 Korda neid küsimusi</h3>"+mistakes.map(x=>`<p><b>${x[0]}</b><br><span class="small">Õige vastus: ${x[x[5]+1]}</span></p>`).join("")}else mistakes.innerHTML="<h3>🏆 Kõik vastused õiged!</h3>"}
+renderQuiz();
+
+function renderAnswerKey(){
+ const box=document.getElementById("answerKey");
+ box.innerHTML=qs.map((q,i)=>`
+ <details style="border-bottom:1px solid var(--line);padding:10px 0">
+   <summary style="cursor:pointer;font-weight:800">${i+1}. ${q[0]}</summary>
+   <div style="padding:10px 0 4px">
+     <span class="good"><b>Õige vastus:</b> ${q[q[5]+1]}</span>
+     <p class="small" style="margin-bottom:0">${q[6]}</p>
+   </div>
+ </details>`).join("");
+}
+renderAnswerKey();
+
+const matchData=[
+["Käsnad","Filtreerivad veest toiduosakesi"],
+["Ainuõõssed","Neil on kõrverakud"],
+["Korallriff","Korallide lubiskelettidest kujunenud elupaik"],
+["Okasnahksed","Meres elavad loomad, nt meritäht"],
+["Rõngussid","Keha koosneb lülidest"],
+["Ümarussid","Silindriline keha"],
+["Tigu","Tavaliselt üks spiraalne koda"],
+["Karp","Kahe poolega koda"]
+];
+function renderMatch(){
+ const area=document.getElementById("matchArea");
+ area.replaceChildren();
+
+ const opts=matchData.map(x=>x[1]).sort(()=>Math.random()-.5);
+
+ matchData.forEach((x,i)=>{
+   const row=document.createElement("div");
+   row.className="matchrow";
+
+   const label=document.createElement("b");
+   label.textContent=x[0];
+
+   const select=document.createElement("select");
+   select.dataset.i=i;
+   select.style.color="#172033";
+   select.style.backgroundColor="#ffffff";
+
+   const placeholder=document.createElement("option");
+   placeholder.value="";
+   placeholder.textContent="— Vali kirjeldus —";
+   placeholder.selected=true;
+   placeholder.disabled=false;
+   select.appendChild(placeholder);
+
+   opts.forEach(optionText=>{
+     const option=document.createElement("option");
+     option.value=optionText;
+     option.textContent=optionText;
+     option.style.color="#172033";
+     option.style.backgroundColor="#ffffff";
+     select.appendChild(option);
+   });
+
+   row.appendChild(label);
+   row.appendChild(select);
+   area.appendChild(row);
+ });
+}
+function checkMatch(){let sels=[...matchArea.querySelectorAll("select")],ok=0;sels.forEach((s,i)=>{if(s.value===matchData[i][1])ok++});matchResult.classList.remove("hidden");matchResult.innerHTML=`<b>${ok} / ${matchData.length} õigesti.</b> ${ok===matchData.length?"Super! 🏆":"Vaata valed vastused üle ja proovi uuesti."}`}
+renderMatch();
+
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>showTab(b.dataset.tab)));
+function showTab(id){document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===id));document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===id));window.scrollTo({top:0,behavior:"smooth"})}
+</script>
+</body>
+</html>
