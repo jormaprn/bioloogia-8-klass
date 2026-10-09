@@ -79,6 +79,15 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:25px}
 .chem-quiz button:focus{outline:2px solid #4b7bd8}
 .chem-quiz .quiz-feedback{font-weight:600;min-height:1em;color:#315a44}
 
+
+.review-group{margin:12px 0;border:1px solid var(--line);border-radius:12px;background:#fbfcff;padding:12px}
+.review-group>summary{font-weight:750;cursor:pointer;color:#243b61;padding:4px}
+.review-group ol{padding-left:24px}
+.review-group li{padding:8px 0;line-height:1.5}
+.review-group li>details{margin:6px 0 0;padding:8px 10px;background:#eef5ff;border-radius:8px}
+.review-group li>details>summary{cursor:pointer;font-size:.93rem;color:#315da5;font-weight:650}
+.review-group li>details:not([open]){background:#f4f7fb}
+
 </style>
 </head>
 <body>
@@ -215,6 +224,99 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:25px}
 <section class="chem-section" id="chem-practice"><div class="chem-card"><h3>Harjuta üht küsimust korraga</h3><p>Vali vastus. Näed kohe õiget vastust ja selgitust. Valesti vastatud küsimused korduvad.</p><div class="chem-progress"><span id="cpBar"></span></div><p id="cpCount"></p><div class="chem-q" id="cpQuestion"></div><div class="chem-answers" id="cpAnswers"></div><div class="chem-feedback" id="cpFeedback">Vali vastus.</div><button class="chem-primary" id="cpNext" onclick="chemNextPractice()" disabled>Järgmine →</button><button class="chem-secondary" onclick="chemRestartPractice()">Alusta uuesti</button></div></section>
 <section class="chem-section" id="chem-quiz"><div class="chem-card"><h3>20 küsimusega proovikontrolltöö</h3><div class="chem-progress"><span id="cqBar"></span></div><p id="cqCount"></p><div class="chem-q" id="cqQuestion"></div><div class="chem-answers" id="cqAnswers"></div><div class="chem-feedback" id="cqFeedback">Vali vastus.</div><button class="chem-primary" id="cqNext" onclick="chemNextQuiz()" disabled>Järgmine →</button><div class="chem-callout" id="cqResult" style="display:none"></div><button class="chem-secondary" onclick="chemStartQuiz()">Tee test uuesti</button></div></section>
 <section class="chem-section" id="chem-recall"><div class="chem-card"><h3>Kordamisküsimused</h3><p>Proovi vastata oma sõnadega ja ava seejärel näidisvastus.</p><div id="chemRecallList"></div></div></section>
+
+<div class="chem-card" id="allTextbookReview">
+  <h3>📖 Kõik piltidel olevad kordamisküsimused</h3>
+  <p>See lisajaotis katab sinu saadetud õpiku piltidel nähtavad kordamisküsimused ja mõtlemisülesanded. Vasta enne ise ning ava siis „Näidisvastus”. Mõnele küsimusele võib sobida mitu põhjendatud vastust.</p>
+
+  <details class="review-group" open><summary>1. Ained ja nende omadused</summary>
+  <ol>
+    <li><b>Mille poolest erinevad puhtad ained segudest?</b><details><summary>Näidisvastus</summary>Puhas aine koosneb ühest ainest ja selle koostis ning omadused on kindlad. Segu koosneb vähemalt kahest ainest ning selle koostis võib varieeruda.</details></li>
+    <li><b>Kuidas saab puhast ainet ainete segust eristada?</b><details><summary>Näidisvastus</summary>Uurides omadusi ja vajaduse korral segu lahutades, näiteks filtreerimise, aurustamise, destilleerimise või magnetiga eraldamise abil.</details></li>
+    <li><b>Milliste füüsikaliste omaduste järgi saab aineid kergesti eristada?</b><details><summary>Näidisvastus</summary>Värvuse, lõhna, oleku, tiheduse, kõvaduse, elektri- ja soojusjuhtivuse ning sulamis- ja keemistemperatuuri järgi. Tundmatuid aineid ei tohi maitsmise ega otsese nuusutamisega uurida.</details></li>
+    <li><b>Mille poolest erineb tahkete, vedelate ja gaasiliste ainete osakeste paiknemine?</b><details><summary>Näidisvastus</summary>Tahkes aines on osakesed tihedalt ja korrapäraselt ning võnguvad oma koha ümber. Vedelikus on nad lähestikku, kuid saavad liikuda. Gaasis on nad hõredalt ja liiguvad vabalt.</details></li>
+    <li><b>Millistel igapäevastel ainetel on väga kõrge või väga madal sulamistemperatuur?</b><details><summary>Näidisvastus</summary>Paljud metallid, näiteks raud ja volfram, sulavad kõrgel temperatuuril. Jää sulab 0 °C juures; mõned ained, näiteks elavhõbe, on toatemperatuuril vedelad.</details></li>
+    <li><b>Mida näitab aine tihedus?</b><details><summary>Näidisvastus</summary>Kui suur mass on kindla ruumalaga ainel. Valem on ρ = m/V.</details></li>
+    <li><b>Kui suur on 1 m³ vee mass kilogrammides, grammides ja tonnides?</b><details><summary>Näidisvastus</summary>Ligikaudu 1000 kg = 1 000 000 g = 1 tonn.</details></li>
+    <li><b>Millised ained jäävad veepinnale ujuma ja millised vajuvad põhja? Miks?</b><details><summary>Näidisvastus</summary>Üldjuhul ujuvad veest väiksema tihedusega ained, näiteks puit, ja vajuvad suurema tihedusega ained, näiteks raudnael. Kuju ja õõnsused võivad samuti mõjutada, kas ese ujub.</details></li>
+    <li><b>Kus on oluline materjali kõvadus? Too igapäevaseid näiteid.</b><details><summary>Näidisvastus</summary>Lõikeriistades, puurides, ehitusmaterjalides ja kulumiskindlates pindades. Näiteks peab noa tera olema piisavalt kõva.</details></li>
+    <li><b>Mille poolest erinevad aine kõvadus ja tugevus?</b><details><summary>Näidisvastus</summary>Kõvadus näitab vastupanu kriimustamisele või sissetungimisele; tugevus näitab vastupanu purunemisele, venitamisele või survele.</details></li>
+    <li><b>Millal on oluline, et materjal ei juhiks elektrit?</b><details><summary>Näidisvastus</summary>Elektrijuhtmete ja elektriseadmete isolatsioonis, et vältida elektrilööki ja lühist.</details></li>
+    <li><b>Miks on elektriseadmeid ohutum puudutada vooluvõrgus ühe käega?</b><details><summary>Näidisvastus</summary>Nii väheneb võimalus, et vool liigub ühest käest teise läbi rindkere. Kõige tähtsam on siiski vältida pingestatud osade puudutamist.</details></li>
+    <li><b>Miks võib külma ilmaga puupingil istuda soojemalt kui metallpingil?</b><details><summary>Näidisvastus</summary>Metall juhib soojust puidust paremini ja viib kehalt soojuse kiiremini ära, mistõttu tundub metall külmem.</details></li>
+    <li><b>Mida näitavad aine elektri- ja soojusjuhtivus?</b><details><summary>Näidisvastus</summary>Elektrijuhtivus näitab, kui hästi aine juhib elektrivoolu; soojusjuhtivus näitab, kui hästi soojus aines edasi kandub.</details></li>
+  </ol></details>
+
+  <details class="review-group"><summary>2. Keemialabori ohutus ja katsevahendid</summary>
+  <ol>
+    <li><b>Miks tuleb keemiakatsetes järgida ohutusnõudeid?</b><details><summary>Näidisvastus</summary>Et vältida põletusi, mürgistusi, tulekahju, silma- ja nahakahjustusi ning muid õnnetusi.</details></li>
+    <li><b>Mis võib juhtuda, kui katseid teha hooletult?</b><details><summary>Näidisvastus</summary>Ained võivad pritsida, süttida või ohtlikult reageerida; inimene võib saada põletuse või mürgistuse.</details></li>
+    <li><b>Millised on tähtsamad keemiakatsete ohutusnõuded?</b><details><summary>Näidisvastus</summary>Järgi õpetaja juhiseid, kasuta vajalikke kaitsevahendeid, hoia töökoht korras, kasuta väikseid ainekoguseid, ära maitse aineid ning pese pärast tööd käed.</details></li>
+    <li><b>Miks kasutatakse katsetes võimalikult väikseid ainekoguseid?</b><details><summary>Näidisvastus</summary>Väiksem kogus vähendab ohtu ja jäätmete hulka ning muudab õnnetuse korral tagajärjed väiksemaks.</details></li>
+    <li><b>Kuidas tundmatut ainet ohutult nuusutada?</b><details><summary>Näidisvastus</summary>Ainult õpetaja loal ja juhendamisel, lehvitades käega ettevaatlikult auru nina suunas. Ainet ei nuusutata otse ega maitsta.</details></li>
+    <li><b>Miks ei tohi labori aineid maitsta?</b><details><summary>Näidisvastus</summary>Aine võib olla mürgine, söövitav või muul viisil tervisele ohtlik.</details></li>
+    <li><b>Kuidas kuumutada ainet katseklaasis ohutult?</b><details><summary>Näidisvastus</summary>Kasuta katseklaasihoidjat, suuna ava endast ja teistest eemale ning kuumuta ettevaatlikult liikuvat leeki kasutades, järgides õpetaja juhiseid.</details></li>
+    <li><b>Miks ei tohi katseklaasi kuumutamisel olla see vedelikku ääreni täis?</b><details><summary>Näidisvastus</summary>Vedelik võib keema hakata ja kuumalt välja pritsida.</details></li>
+    <li><b>Miks ei tohi piirituslambi leeki puhudes kustutada?</b><details><summary>Näidisvastus</summary>Puhumine võib levitada põlevat vedelikku ja leeki. Kasuta selleks ettenähtud kustutuskorki ning järgi õpetaja juhiseid.</details></li>
+    <li><b>Mida teha, kui ohtlik aine satub nahale või riietele?</b><details><summary>Näidisvastus</summary>Teavita kohe õpetajat ja loputa saastunud kohta rohke veega vastavalt aine ohutusjuhendile.</details></li>
+    <li><b>Mida teha, kui aine satub lauale või põrandale?</b><details><summary>Näidisvastus</summary>Teavita õpetajat ja ära korista tundmatut ainet omal käel. Järgi õpetaja juhiseid.</details></li>
+    <li><b>Miks ei tohi katsejääke lihtsalt kraanikaussi või prügikasti visata?</b><details><summary>Näidisvastus</summary>Need võivad olla mürgised, söövitavad või keskkonnale kahjulikud. Jäätmed tuleb koguda õpetaja määratud viisil.</details></li>
+    <li><b>Millised on klaasnõude eelised ja puudused?</b><details><summary>Näidisvastus</summary>Klaas on sageli läbipaistev, keemiliselt vastupidav ja kuumakindel, kuid habras ning võib puruneda.</details></li>
+    <li><b>Millises anumas võib ainet tugevalt kuumutada?</b><details><summary>Näidisvastus</summary>Ainult kuumutamiseks sobivas kuumakindlas nõus ja õpetaja juhendamisel. Kõik klaasnõud ei sobi otseseks kuumutamiseks.</details></li>
+    <li><b>Milliseid anumaid kasutatakse vedelike ruumala mõõtmiseks?</b><details><summary>Näidisvastus</summary>Mõõtesilindrit kasutatakse ruumala mõõtmiseks; pipett sobib täpsemaks väikese vedelikukoguse mõõtmiseks.</details></li>
+    <li><b>Kas vedeliku kogust saab täpsemalt mõõta mõõtesilindri või pipetiga? Miks?</b><details><summary>Näidisvastus</summary>Tavaliselt on pipett väikeste vedelikukoguste täpsemaks mõõtmiseks sobivam; täpsus sõltub konkreetsest vahendist.</details></li>
+  </ol></details>
+
+  <details class="review-group"><summary>3. Füüsikalised ja keemilised nähtused</summary>
+  <ol>
+    <li><b>Mille poolest erinevad keemilised nähtused füüsikalistest nähtustest?</b><details><summary>Näidisvastus</summary>Füüsikalise nähtuse korral aine koostis ei muutu. Keemilise nähtuse ehk reaktsiooni korral tekivad lähteainetest uued ained.</details></li>
+    <li><b>Milliseid füüsikalisi nähtusi tunned igapäevaelust?</b><details><summary>Näidisvastus</summary>Jää sulamine, vee aurumine, vihmasadu, klaasi purunemine, aine lahustumine ja eseme liikumine.</details></li>
+    <li><b>Mis on keemiline reaktsioon?</b><details><summary>Näidisvastus</summary>Protsess, mille käigus lähteainetest tekivad uued ained ehk saadused.</details></li>
+    <li><b>Milliseid keemilisi nähtusi tunned igapäevaelust? Kas nendega kaasneb ka füüsikalisi muutusi?</b><details><summary>Näidisvastus</summary>Näiteks põlemine, roostetamine, toidu küpsemine ja piima hapnemine. Sageli toimuvad samal ajal ka füüsikalised muutused, näiteks soojenemine või oleku muutumine.</details></li>
+    <li><b>Millised füüsikalised ja keemilised nähtused esinevad küünla põlemisel?</b><details><summary>Näidisvastus</summary>Vaha sulamine ja aurustumine on füüsikalised muutused. Vahaauru põlemine on keemiline reaktsioon, mille käigus tekivad uued ained ning eraldub soojust ja valgust.</details></li>
+    <li><b>Kas järgmiste nähtustega kaasneb keemiline reaktsioon: piima hapnemine, vihmasadu, patarei töötamine, taimede kasvamine, rauapulbri tõmbumine magneti külge, automootori töötamine, puulehtede kolletumine, või sulamine kuumal pannil?</b><details><summary>Näidisvastus</summary>Keemiline reaktsioon toimub piima hapnemisel, patarei töötamisel, taimede kasvamisel, automootori kütuse põlemisel ja lehtede kolletumisel. Vihmasadu, rauapulbri magneti külge tõmbumine ja või sulamine on peamiselt füüsikalised nähtused.</details></li>
+    <li><b>Milliste tunnuste järgi saab märgata, et toimub keemiline reaktsioon?</b><details><summary>Näidisvastus</summary>Värvuse muutus, iseloomulik lõhn, gaasi eraldumine, sademe teke, soojuse eraldumine või neeldumine ja valguse teke. Kõiki tunnuseid ei pruugi alati esineda.</details></li>
+    <li><b>Miks tuleb paljude keemiliste reaktsioonide toimumiseks lähteaineid kuumutada?</b><details><summary>Näidisvastus</summary>Kuumutamine annab osakestele energiat, nii et reaktsioon saab käivituda või kulgeb kiiremini.</details></li>
+    <li><b>Too näiteid reaktsioonidest, milleks on vaja süütamist, kuumutamist, päikesevalgust või elektrivoolu.</b><details><summary>Näidisvastus</summary>Süütamine: gaasi või küünla põlemine. Kuumutamine: toidu küpsemisega kaasnevad reaktsioonid. Päikesevalgus: fotosüntees. Elektrivool: vee elektrolüüs või aku laadimisega seotud reaktsioonid.</details></li>
+    <li><b>Too näiteid väga püsivatest ainetest ja keemiliselt aktiivsetest ainetest.</b><details><summary>Näidisvastus</summary>Püsivate ainete näiteks võib tuua väärisgaasid ja tavatingimustes vähe reageeriva kulla. Aktiivsete ainete näited on naatrium ja kaalium; nende käsitsemine nõuab eriteadmisi ja ohutusnõudeid.</details></li>
+    <li><b>Lubjakivi tükid pandi reageerima happe lahusega. Kuidas reaktsiooni kiirust suurendada?</b><details><summary>Näidisvastus</summary>Peenestada lubjakivi, et suurendada kokkupuutepinda, segada lahust või sobivates kontrollitud tingimustes temperatuuri tõsta.</details></li>
+  </ol></details>
+
+  <details class="review-group"><summary>4. Lahused, lahustuvus ja pihused</summary>
+  <ol>
+    <li><b>Mis on lahus?</b><details><summary>Näidisvastus</summary>Lahus on ühtlane segu, milles lahustunud aine osakesed on jaotunud lahustis ühtlaselt.</details></li>
+    <li><b>Mis on lahusti ja mis on lahustunud aine?</b><details><summary>Näidisvastus</summary>Lahusti on aine, milles teine aine lahustub; lahustunud aine on see, mis lahustis jaotub. Näiteks soolavees on vesi lahusti ja sool lahustunud aine.</details></li>
+    <li><b>Milliseid lahuseid oskad igapäevaelust nimetada? Kas lahustunud aine võib olla tahke või gaasiline?</b><details><summary>Näidisvastus</summary>Soolavesi, suhkrulahus, äädikalahus ja gaseeritud vesi. Lahustunud aine võib olla tahke, vedel või gaasiline.</details></li>
+    <li><b>Millised tegurid kiirendavad lahustumist?</b><details><summary>Näidisvastus</summary>Segamine, tahke aine peenestamine ja tavaliselt temperatuuri tõstmine.</details></li>
+    <li><b>Mida tähendab küllastunud lahus?</b><details><summary>Näidisvastus</summary>See sisaldab antud temperatuuril maksimaalse koguse lahustunud ainet; lisatud aine enam samas olukorras ei lahustu.</details></li>
+    <li><b>Millest sõltub aine lahustuvus?</b><details><summary>Näidisvastus</summary>Aine ja lahusti omadustest ning temperatuurist. Gaaside lahustuvus vees üldiselt väheneb temperatuuri tõustes.</details></li>
+    <li><b>Kas segamine või aine peenestamine muudab lahustuvust?</b><details><summary>Näidisvastus</summary>Need suurendavad tavaliselt lahustumise kiirust, kuid ei muuda kindlal temperatuuril aine tasakaalulist lahustuvust.</details></li>
+    <li><b>Mis on pihus?</b><details><summary>Näidisvastus</summary>Segu, milles ühe aine väikesed osakesed või piisad on jaotunud teises aines, kuid segu ei ole molekulaarsel tasandil täiesti ühtlane nagu tõeline lahus.</details></li>
+    <li><b>Mis on Tyndalli efekt?</b><details><summary>Näidisvastus</summary>Pihuses hajutavad osakesed valgust, mistõttu valgusvihk muutub nähtavaks. Tõelises lahuses ei ole tavaline Tyndalli efekt nähtav.</details></li>
+    <li><b>Mis vahe on emulsioonil ja suspensioonil?</b><details><summary>Näidisvastus</summary>Emulsioonis on ühe vedeliku piisad teises vedelikus, näiteks õli vees. Suspensioonis on tahked osakesed vedelikus, näiteks liiv vees.</details></li>
+    <li><b>Too näiteid aerosoolidest, vahtudest ja pihustest igapäevaelus.</b><details><summary>Näidisvastus</summary>Aerosoolid: udu ja pihustatav deodorant. Vaht: seebivaht. Emulsioon: piim või kreem. Suspensioon: mudane vesi.</details></li>
+  </ol></details>
+
+  <details class="review-group"><summary>5. Lahuse massiprotsent</summary>
+  <ol>
+    <li><b>Mida väljendab lahuse massiprotsent?</b><details><summary>Näidisvastus</summary>Mitu grammi lahustunud ainet sisaldub 100 grammis lahuses.</details></li>
+    <li><b>10 g soodat lahustati 40 g vees. Arvuta lahuse massiprotsent.</b><details><summary>Näidisvastus</summary>Lahuse mass = 10 + 40 = 50 g. Massiprotsent = 10/50 × 100% = 20%.</details></li>
+    <li><b>Mitu grammi suhkrut ja vett kulub 1,5 kg 20%-lise lahuse valmistamiseks?</b><details><summary>Näidisvastus</summary>Suhkur: 1,5 kg × 0,20 = 0,30 kg = 300 g. Vesi: 1,5 − 0,3 = 1,2 kg = 1200 g.</details></li>
+    <li><b>Arvuta, mitu grammi 12%-list lahust saab valmistada 200 g glükoosist.</b><details><summary>Näidisvastus</summary>Lahuse kogumass = 200 g / 0,12 ≈ 1666,7 g. Vett tuleb lisada umbes 1466,7 g.</details></li>
+    <li><b>Kui palju vett tuleb lisada 0,5 kg vasksulfaadile, et saada 2,5%-line lahus?</b><details><summary>Näidisvastus</summary>Kogulahuse mass = 0,5 kg / 0,025 = 20 kg. Vett on vaja 20 − 0,5 = 19,5 kg.</details></li>
+  </ol></details>
+
+  <details class="review-group"><summary>6. Täiendavad mõtlemisülesanded piltidelt</summary>
+  <ol>
+    <li><b>Miks tunneme aine iseloomulikku lõhna vahel juba üsna kaugelt?</b><details><summary>Näidisvastus</summary>Lenduvad aineosakesed levivad õhus ja jõuavad ninani, kus lõhnaretseptorid neid tajuvad.</details></li>
+    <li><b>Miks keeb vesi kõrgel mägedes madalamal temperatuuril?</b><details><summary>Näidisvastus</summary>Õhurõhk on mägedes väiksem, seega keeb vesi madalamal temperatuuril kui merepinnal.</details></li>
+    <li><b>Miks on suured veekogud talvel jääga kaetud peamiselt pinnalt?</b><details><summary>Näidisvastus</summary>Vesi on suurima tihedusega umbes 4 °C juures. Külmem vesi ja jää jäävad pinnale ning jää toimib ka soojusisolaatorina.</details></li>
+    <li><b>Kas looduslik vesi on puhas aine või segu?</b><details><summary>Näidisvastus</summary>Looduslik vesi on tavaliselt segu, sest selles on lahustunud sooli, gaase ja muid aineid.</details></li>
+    <li><b>Miks on kasulik vaadata toiduainete pakendilt lisaainete loetelu?</b><details><summary>Näidisvastus</summary>Et teada, milliseid lisaaineid toode sisaldab ning võrrelda tooteid ja teha teadlikke valikuid.</details></li>
+    <li><b>Millised on keemilise reaktsiooni toimumise tingimused õpiku kokkuvõtte järgi?</b><details><summary>Näidisvastus</summary>Lähteainetele tuleb anda vajalikku energiat, näiteks kuumutamise, süütamise, valgustamise või elektrivoolu abil. Kõik reaktsioonid ei vaja kõiki neid tingimusi.</details></li>
+  </ol></details>
+</div>
+
 </div>
 
 <div id="biologyApp">
