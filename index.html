@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Õppimise keskus – Keemia, Füüsika, Bioloogia, Ajalugu ja Geograafia</title>
+<title>Keemia – Mida uurib keemia? · Õppimise keskus</title>
 <style>
 :root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#657089;--accent:#356ae6;--accent2:#16a085;--bad:#d94b4b;--good:#18865b;--line:#dfe5ef;--soft:#eef3ff}
 *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}
@@ -113,18 +113,12 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:25px}
 </style>
 </head>
 <body>
+<a href="../" style="display:inline-block;margin:12px 16px;padding:10px 14px;border-radius:10px;background:#172033;color:#fff;text-decoration:none;font-weight:700;position:relative;z-index:10">← Kõik õppeteemad</a>
 <header><div class="wrap">
 <div class="eyebrow">8. klass · Heinart Pärn</div>
 <h1>Õppimise keskus</h1>
 <p>Sinu õppimisäpid ühes kohas · vali õppeaine ja seejärel teema.</p>
 </div></header>
-
-<div class="wrap" style="padding:14px 0 4px"><div class="grid">
-<a class="card" href="keemia/" style="text-decoration:none;color:inherit"><div class="topic-icon">🧪</div><h3>Keemia: Mida uurib keemia?</h3><p>Ava otse keemia õppeteema.</p><b>Ava teema →</b></a>
-<a class="card" href="bioloogia/selgrootud/" style="text-decoration:none;color:inherit"><div class="topic-icon">🪼</div><h3>Bioloogia: Selgrootud</h3><p>Ava otse bioloogia õppeteema.</p><b>Ava teema →</b></a>
-<a class="card" href="geograafia/kliima/" style="text-decoration:none;color:inherit"><div class="topic-icon">🌦️</div><h3>Geograafia: Kliima</h3><p>Ava otse kliima kontrolltöö õppematerjal.</p><b>Ava teema →</b></a>
-</div></div>
-
 <div class="subject-nav"><div class="subject-nav-inner" role="tablist" aria-label="Õppeained">
 <button class="subject-tab" data-subject="chemistry" role="tab">🧪 Keemia</button>
 <button class="subject-tab" data-subject="physics" role="tab">⚛️ Füüsika</button>
@@ -429,7 +423,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:25px}
 </div><ul><li>Järgi õpetaja juhiseid ja tööjuhendit; ära tee omapäi katseid.</li><li>Kasuta vajaduse korral kaitseprille ja kindaid.</li><li>Ära maitse kemikaale ega nuusuta otse anuma kohalt.</li><li>Hoia tuleohtlikud ained leegist eemal ja ära kuumuta suletud anumat.</li><li>Hoia töökoht korras ning väldi kemikaalide sattumist nahale, riietele ja silma.</li><li>Õnnetuse korral teavita kohe õpetajat ja järgi tema juhiseid.</li><li>Tunne ohumärke: tuleohtlik, söövitav, oksüdeeriv, kahjulik/ärritav, plahvatusohtlik, mürgine ja keskkonnaohtlik.</li></ul></div>
 </section>
 <section class="chem-section" id="chem-practice"><div class="chem-card"><h3>Harjuta üht küsimust korraga</h3><p>Vali vastus. Näed kohe õiget vastust ja selgitust. Valesti vastatud küsimused korduvad.</p><div class="chem-progress"><span id="cpBar"></span></div><p id="cpCount"></p><div class="chem-q" id="cpQuestion"></div><div class="chem-answers" id="cpAnswers"></div><div class="chem-feedback" id="cpFeedback">Vali vastus.</div><button class="chem-primary" id="cpNext" onclick="chemNextPractice()" disabled>Järgmine →</button><button class="chem-secondary" onclick="chemRestartPractice()">Alusta uuesti</button></div></section>
-<section class="chem-section" id="chem-quiz"><div class="chem-card"><h3>20 küsimusega proovikontrolltöö</h3><div class="chem-progress"><span id="cqBar"></span></div><p id="cqCount"></p><div class="chem-q" id="cqQuestion"></div><div class="chem-answers" id="cqAnswers"></div><div class="chem-feedback" id="cqFeedback">Vali vastus.</div><button class="chem-primary" id="cqNext" onclick="chemNextQuiz()" disabled>Järgmine →</button><div class="chem-callout" id="cqResult" style="display:none"></div><button class="chem-secondary" onclick="chemStartQuiz()">Tee test uuesti</button></div></section>
+<section class="chem-section" id="chem-quiz"><div class="chem-card"><h3>72 küsimusega proovikontrolltöö</h3><div class="chem-progress"><span id="cqBar"></span></div><p id="cqCount"></p><div class="chem-q" id="cqQuestion"></div><div class="chem-answers" id="cqAnswers"></div><div class="chem-feedback" id="cqFeedback">Vali vastus.</div><button class="chem-primary" id="cqNext" onclick="chemNextQuiz()" disabled>Järgmine →</button><div class="chem-callout" id="cqResult" style="display:none"></div><button class="chem-secondary" onclick="chemStartQuiz()">Tee test uuesti</button></div></section>
 <section class="chem-section" id="chem-recall"><div class="chem-card"><h3>Kordamisküsimused</h3><p>Proovi vastata oma sõnadega ja ava seejärel näidisvastus.</p><div id="chemRecallList"></div></div></section>
 
 <div class="chem-card" id="allTextbookReview">
@@ -523,6 +517,29 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:25px}
     <li><b>Millised on keemilise reaktsiooni toimumise tingimused õpiku kokkuvõtte järgi?</b><details><summary>Näidisvastus</summary>Lähteainetele tuleb anda vajalikku energiat, näiteks kuumutamise, süütamise, valgustamise või elektrivoolu abil. Kõik reaktsioonid ei vaja kõiki neid tingimusi.</details></li>
   </ol></details>
 </div>
+
+
+  <section class="climate-card" id="climateTopicQuiz" style="margin-top:18px">
+    <h3>🧩 Kliima teemade kaupa harjutustest</h3>
+    <p>Vali teema ja harjuta selle kohta eraldi küsimusi. Küsimused põhinevad selle õppematerjali sisul ja sinu kordamislehel.</p>
+    <label for="clTopicSelect"><b>Vali teema:</b></label>
+    <select id="clTopicSelect" style="display:block;width:100%;padding:12px;border-radius:10px;margin:8px 0 14px">
+      <option value="all">Kõik kliima teemad</option>
+      <option value="ilm">Ilm ja kliima</option>
+      <option value="atmos">Atmosfäär ja osoonikiht</option>
+      <option value="kiirgus">Päikesekiirgus ja maapinna soojenemine</option>
+      <option value="diagramm">Kliimadiagrammi lugemine</option>
+      <option value="mootmine">Ilmaelemendid ja mõõteriistad</option>
+    </select>
+    <div class="climate-progress" style="height:8px;background:#dce8f5;border-radius:99px;overflow:hidden"><div id="clTopicBar" style="height:100%;width:0;background:#0f766e"></div></div>
+    <p id="clTopicCount">Vali teema ja vajuta „Alusta testi”.</p>
+    <div id="clTopicQuestion" style="font-weight:800;font-size:1.15rem;margin:12px 0"></div>
+    <div id="clTopicAnswers" style="display:grid;gap:8px"></div>
+    <p id="clTopicFeedback" aria-live="polite"></p>
+    <button type="button" class="primary" id="clTopicNext" disabled>Järgmine →</button>
+    <button type="button" class="secondary" id="clTopicStart">Alusta testi / vali teine teema</button>
+    <div id="clTopicResult" style="display:none;margin-top:12px"></div>
+  </section>
 
 </div>
 
@@ -643,7 +660,59 @@ const chemBank=[
 ["Milline on hea elektrijuht?",["Enamik metalle","Kumm","Plast","Kuiv puit"],0,"Metallid juhivad üldjuhul hästi elektrit."],
 ["Mida näitab tihedus?",["Aine lõhna","Massi kindla ruumala kohta","Aine värvust","Keemistemperatuuri"],1,"Tihedus seostab massi ja ruumala."],
 ["Mida teha kemikaali kasutamisel?",["Maitsta ainet","Nuusutada otse anumast","Järgida juhiseid ja kasutada vajalikke kaitsevahendeid","Segada tundmatu ainega"],2,"Ohutusjuhiste järgimine aitab vältida õnnetusi."],
-["Mida teha õnnetuse korral laboris?",["Varjata juhtunut","Teavitada kohe õpetajat","Jätkata katset","Pühkida aine riietesse"],1,"Teavita õpetajat ja järgi juhiseid."]
+["Mida teha õnnetuse korral laboris?",["Varjata juhtunut","Teavitada kohe õpetajat","Jätkata katset","Pühkida aine riietesse"],1,"Teavita õpetajat ja järgi juhiseid."],
+["Milline väide kirjeldab segu õigesti?", ["Segu koosneb ainult ühest puhtast ainest", "Segu sisaldab vähemalt kahte ainet", "Segu on alati läbipaistev", "Segu ei saa olla gaasiline"], 1, "Segu sisaldab vähemalt kahte ainet; näiteks õhk on gaaside segu."],
+["Milline omadus on füüsikaline omadus?", ["Süttivus", "Roostetamine", "Tihedus", "Põlemine"], 2, "Tihedust saab määrata ilma uut ainet tekitamata."],
+["Mis toimub aine sulamisel?", ["Tekib alati uus aine", "Tahke aine muutub vedelaks", "Vedelik muutub gaasiks", "Aine kaob"], 1, "Sulamine on oleku muutus ja füüsikaline nähtus."],
+["Milline näide on keemiline nähtus?", ["Jää purunemine", "Vee külmumine", "Raua roostetamine", "Soola lahustumine vees"], 2, "Roostetamisel tekib uus aine."],
+["Miks on värvuse muutus mõnikord reaktsiooni tunnus?", ["See võib viidata uue aine tekkele", "See tõestab alati, et aine külmus", "See tähendab alati aurustumist", "See näitab ainult massi"], 0, "Värvuse muutus võib olla üks keemilise reaktsiooni tunnuseid, kuid seda tuleb hinnata koos teiste vaatlustega."],
+["Mida tähendab, et aine osakesed gaasis liiguvad vabalt?", ["Need püsivad kindlates kohtades", "Need saavad liikuda eri suundades ja täidavad anuma", "Need ei liigu üldse", "Need moodustavad alati kristalli"], 1, "Gaasis on osakesed hõredalt ja liiguvad vabalt."],
+["Milline tegevus suurendab tavaliselt tahke aine lahustumise kiirust?", ["Suurte tükkide kasutamine", "Segamine", "Lahusti eemaldamine", "Aine jahutamine alati"], 1, "Segamine aitab lahustil ja lahustunud ainel kokku puutuda."],
+["Kui lisatud sool enam samal temperatuuril ei lahustu, võib lahus olla ...", ["küllastumata", "küllastunud", "puhas aine", "aerosool"], 1, "Küllastunud lahuses on antud tingimustel lahustunud maksimaalne kogus ainet."],
+["Milline segu on emulsioon?", ["Liiv vees", "Õlipiisad vees", "Sool täielikult lahustunud vees", "Hapnik"], 1, "Emulsioonis on ühe vedeliku piisad teises vedelikus."],
+["Milline segu on suspensioon?", ["Liiv vees", "Suhkur täielikult vees lahustunud", "Puhas vask", "Destilleeritud vesi"], 0, "Suspensioonis on tahked osakesed vedelikus."],
+["Mida väljendab 15% massiprotsendiga lahus?", ["15 g lahustunud ainet 100 g lahuses", "15 g vett 1 g lahuses", "15 g lahust 100 g lahustunud aines", "15% ruumalast alati"], 0, "Massiprotsent näitab lahustunud aine massi 100 grammi lahuse kohta."],
+["Lahuses on 20 g soola ja 80 g vett. Kui suur on soola massiprotsent?", ["10%", "20%", "25%", "80%"], 1, "Lahuse mass on 100 g; 20/100 × 100% = 20%."],
+["Miks tundub metall külmem kui puit, kui mõlemad on samas ruumis?", ["Metall juhib soojust käest kiiremini ära", "Metall on alati külmumispunktist madalamal", "Puit ei sisalda osakesi", "Metall ei juhi soojust"], 0, "Metall juhib soojust üldiselt paremini ja viib käest soojuse kiiremini ära."],
+["Mida tuleb teha, kui kemikaal satub kogemata nahale?", ["Varjata juhtunut", "Järgida labori juhiseid ja teavitada kohe õpetajat", "Maitsta kemikaali", "Jätkata katset"], 1, "Õnnetusest tuleb kohe õpetajale teada anda ja järgida juhiseid."],
+["Mida näitab valem ρ = m/V?", ["Tihedust", "Massiprotsenti", "Temperatuuri", "Rõhku"], 0, "Tihedus on mass jagatud ruumalaga."],
+["Mida uurib keemia lisaks ainete koostisele?", ["Ainult elusorganismide käitumist", "Ainete ehitust, omadusi ja muundumist", "Ainult taevakehi", "Ainult ilma"], 1, "Keemia uurib ainete koostist, ehitust, omadusi ja muundumist."],
+["Milline näide on segu?", ["Destilleeritud vesi", "Puhas vask", "Õhk", "Puhas hapnik"], 2, "Õhk koosneb mitmest gaasist ja on segu."],
+["Milline on segu omadus?", ["Koostis võib eri segudes varieeruda", "Segu koosneb alati ühest ainest", "Segu on alati tahke", "Segu ei saa lahutada"], 0, "Segu koostis võib varieeruda ning komponente saab sageli füüsikaliste meetoditega lahutada."],
+["Milline meetod sobib liiva eraldamiseks veest?", ["Filtreerimine", "Magnetiga eraldamine alati", "Külmutamine ainsana", "Põletamine"], 0, "Liiva ja vee segu saab lahutada filtreerimisega."],
+["Milline meetod sobib lahuses oleva soola kättesaamiseks?", ["Aurustamine", "Tuulelipuga mõõtmine", "Filtreerimine läbi tavalise filtri", "Magnetiga eraldamine"], 0, "Vee aurustamisel jääb lahustunud sool alles."],
+["Milline omadus on füüsikaline?", ["Kõvadus", "Põlemine", "Roostetamine", "Reageerimine happega"], 0, "Kõvadust saab hinnata ilma uut ainet tekitamata."],
+["Milline omadus kirjeldab elektrijuhtivust?", ["Kui hästi aine juhib elektrivoolu", "Kui kiiresti aine roostetab", "Kui palju ainet lahustub alati", "Kui kõrge on aine keemistemperatuur alati"], 0, "Elektrijuhtivus kirjeldab aine võimet elektrivoolu juhtida."],
+["Milline materjal juhib tavaliselt hästi elektrit?", ["Vask", "Kumm", "Kuiv puit", "Plast"], 0, "Metallid, näiteks vask, juhivad elektrit hästi."],
+["Mida näitab aine tihedus?", ["Massi ruumalaühiku kohta", "Ainult aine värvust", "Aine temperatuuri", "Aine lahustumise kiirust"], 0, "Tihedus on massi ja ruumala suhe."],
+["Eseme mass on 200 g ja ruumala 100 cm³. Mis on tihedus?", ["2 g/cm³", "0,5 g/cm³", "100 g/cm³", "300 g/cm³"], 0, "Tihedus = mass / ruumala = 200 g / 100 cm³ = 2 g/cm³."],
+["Mis juhtub osakeste liikumisega aine soojendamisel üldiselt?", ["Osakesed liiguvad kiiremini", "Osakesed lakkavad liikumast", "Osakesed kaovad", "Aine muutub alati keemiliselt"], 0, "Soojendamisel osakeste liikumine üldiselt kiireneb."],
+["Milline olekumuutus on aurustumine?", ["Vedelikust gaasiks", "Tahkest vedelaks", "Gaasist vedelaks", "Vedelikust tahkeks"], 0, "Aurustumisel muutub vedelik gaasiks."],
+["Milline olekumuutus on kondenseerumine?", ["Gaasist vedelaks", "Tahkest gaasiks", "Vedelikust gaasiks", "Tahkest vedelaks"], 0, "Kondenseerumisel muutub gaas vedelikuks."],
+["Milline neist on keemiline nähtus?", ["Küünla vaha põlemine", "Jää purustamine", "Vee külmumine", "Klaasi purunemine"], 0, "Põlemisel tekivad uued ained."],
+["Milline neist on füüsikaline nähtus?", ["Vee keemine", "Puidu põlemine", "Raua roostetamine", "Toidu riknemine"], 0, "Keemisel muutub vee olek, kuid aine jääb veeks."],
+["Milline võib viidata keemilisele reaktsioonile?", ["Gaasi eraldumine", "Aine tüki väiksemaks lõikamine", "Jää sulamine", "Vedelikku valamine"], 0, "Gaasi teke võib olla keemilise reaktsiooni tunnus."],
+["Kas värvuse muutus tõestab alati keemilist reaktsiooni?", ["Jah, alati", "Ei, see võib olla tunnus, kuid tuleb hinnata olukorda", "Värvus ei muutu kunagi", "Ainult gaasides"], 1, "Värvuse muutus võib viidata reaktsioonile, kuid ei tõesta seda alati üksinda."],
+["Mis võib reaktsiooni kiirendada?", ["Temperatuuri tõstmine sobivates tingimustes", "Kõigi osakeste eemaldamine", "Ainete kokkupuutumise takistamine", "Aine täielik jahutamine alati"], 0, "Paljud reaktsioonid toimuvad kõrgemal temperatuuril kiiremini."],
+["Miks peenestamine võib reaktsiooni kiirendada?", ["Suureneb kokkupuutuv pindala", "Aine mass kaob", "Tekib alati uus aine enne reaktsiooni", "Osakesed lakkavad liikumast"], 0, "Peenemal ainel on tavaliselt suurem kokkupuutuv pindala."],
+["Mis on lahusti?", ["Aine, milles teine aine lahustub", "Alati tahke aine", "Aine, mida ei saa segada", "Ainult sool"], 0, "Lahusti on aine, milles lahustatakse teist ainet."],
+["Soolavees on tavaliselt lahustunud aine ...", ["Sool", "Vesi", "Õhk", "Klaas"], 0, "Sool on lahustunud aine ja vesi lahusti."],
+["Milline tegur võib tahke aine lahustumist kiirendada?", ["Segamine", "Aine puutumata jätmine alati", "Lahusti eemaldamine", "Osakeste kokkupuute vähendamine"], 0, "Segamine aitab lahustumisel kiiremini toimuda."],
+["Mida tähendab küllastumata lahus?", ["Selles saab samadel tingimustel veel lahustuda lahustunud ainet", "Selles ei ole lahustunud ainet", "See sisaldab alati ainult tahket ainet", "See on alati hägune"], 0, "Küllastumata lahuses saab samadel tingimustel veel ainet lahustuda."],
+["Mis on suspensioon?", ["Tahkete osakeste segu vedelikus, kus osakesed võivad settida", "Täielikult lahustunud soolavesi", "Ainult puhas vedelik", "Gaaside segu"], 0, "Suspensioonis on vedelikus jaotunud lahustumata tahked osakesed."],
+["Mis on emulsioon?", ["Ühe vedeliku piisad teises vedelikus", "Tahke aine lahustumine gaasis", "Ainult puhas aine", "Metallide segu"], 0, "Emulsioon on kahe omavahel halvasti seguneva vedeliku segu väikeste piiskadena."],
+["Mida võib näidata Tyndalli efekt?", ["Valguse hajumist pihuses", "Õhurõhku", "Aine massi", "Ainult aine temperatuuri"], 0, "Tyndalli efekt on valguse hajumine kolloidses pihuses."],
+["Milline näide sobib loodusliku vee koostise kirjeldamiseks?", ["Vees võib olla lahustunud sooli ja gaase ning hõljuvaid osakesi", "Looduslik vesi on alati täiesti puhas aine", "Looduslikus vees pole kunagi muid aineid", "Kõik looduslik vesi on destilleeritud"], 0, "Looduslik vesi võib sisaldada lahustunud ja hõljuvaid aineid."],
+["Miks levib lõhn ruumis laiali?", ["Aine osakesed liiguvad ja segunevad õhuga", "Lõhnal pole osakesi", "Õhk ei liigu kunagi", "Lõhn liigub ainult vedelikus"], 0, "Osakesed liiguvad ja difundeeruvad õhus."],
+["Miks keeb vesi mägedes madalamal temperatuuril kui merepinnal?", ["Õhurõhk on väiksem", "Õhurõhk on alati suurem", "Vesi muutub puhtaks aineks", "Mägedes pole atmosfääri"], 0, "Vesi keeb siis, kui aururõhk võrdub ümbritseva rõhuga; väiksema õhurõhu korral on keemistemperatuur madalam."],
+["Kuidas arvutatakse lahuse massiprotsent?", ["Lahustunud aine mass / lahuse mass × 100%", "Lahuse mass / ruumala", "Lahusti mass × 100", "Lahustunud aine ruumala + temperatuur"], 0, "Massiprotsent näitab, mitu protsenti lahuse massist moodustab lahustunud aine."],
+["Lahuses on 10 g soola ja 90 g vett. Kui suur on soola massiprotsent?", ["10%", "90%", "9%", "100%"], 0, "Lahuse mass on 100 g ja soola mass 10 g, seega massiprotsent on 10%."],
+["Lahuses on 5 g ainet ja 45 g vett. Kui suur on aine massiprotsent?", ["10%", "5%", "45%", "50%"], 0, "Lahuse mass on 50 g; 5 / 50 × 100% = 10%."],
+["Mida tähendab 5% massiprotsendiga lahus?", ["100 g lahuses on 5 g lahustunud ainet", "100 g vees on alati 5 g lahust", "5 g lahuses on 100 g ainet", "Lahuses on 5% vett ja 95% õhku"], 0, "Massiprotsent arvestatakse kogu lahuse massist."],
+["Milline tegevus on laboris ohutu?", ["Järgida õpetaja juhiseid ja kasutada kaitsevahendeid", "Maitsta kemikaale", "Nuusutada otse anumast", "Segada tundmatuid aineid omal käel"], 0, "Laboris tuleb järgida juhiseid ja kasutada nõutud kaitsevahendeid."],
+["Kuidas tuleks kemikaali lõhna kontrollida, kui õpetaja on selleks loa andnud?", ["Lehvita käega ettevaatlikult auru enda poole", "Nuusuta otse pudelist", "Maitse ainet", "Soojenda pudelit näo lähedal"], 0, "Otsene nuusutamine pole ohutu; järgi õpetaja juhiseid."],
+["Mida teha, kui kemikaali satub silma või nahale?", ["Teavitada kohe õpetajat ja järgida labori loputusjuhiseid", "Oodata tunni lõpuni", "Pühkida varjatult riidesse", "Jätkata katset"], 0, "Õnnetusest tuleb kohe teatada ja järgida labori ohutusjuhiseid."],
+["Miks tuleb katsevahendid pärast tööd korrastada?", ["Et vältida õnnetusi ja hoida töökoht korras", "Et ained muutuksid puhtaks", "Et reaktsioonid kiiremini toimuksid", "Sest kõik ained on ohutud"], 0, "Korras töökoht vähendab õnnetuste riski."]
 ];
 let cpOrder=[],cpI=0,cpWrong=[],cpDone=false,cqOrder=[],cqI=0,cqScore=0,cqWrong=[],cqDone=false;
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
@@ -762,7 +831,22 @@ const qs=[
 ["Milline väide korallriffide kohta on õige?","Need pakuvad elupaiku paljudele liikidele","Need tekivad ainult järvedes","Need koosnevad peamiselt liivast","Need ei mõjuta rannikut",0,"Korallrifid on väga liigirikkad elupaigad ja võivad vähendada lainetuse mõju rannikule."],
 ["Milline sümmeetria on täiskasvanud okasnahksetel sageli?","Kiirjas","Ainult kahepoolne","Puudub alati","Kolmeteljeline",0,"Täiskasvanud okasnahksetel on sageli viiekiireline või muu kiirjas sümmeetria."],
 ["Milline väide ainuõõssete kohta on õige?","Neil on üks kehaõõs, kuhu avaneb suu","Neil on selgroog","Nende keha koosneb alati lülidest","Neil on alati koda",0,"Ainuõõssetel on seedimisega seotud üks kehaõõs, millel on üks ava."],
-["Miks on käsnad looduses tähtsad?","Nad filtreerivad vett ja pakuvad elupaika","Nad moodustavad selgroo","Nad toodavad karpe","Nad ehitavad metsades pesi",0,"Käsnad filtreerivad vett ning on osa veekogude toiduahelatest ja elupaikadest."]
+["Miks on käsnad looduses tähtsad?","Nad filtreerivad vett ja pakuvad elupaika","Nad moodustavad selgroo","Nad toodavad karpe","Nad ehitavad metsades pesi",0,"Käsnad filtreerivad vett ning on osa veekogude toiduahelatest ja elupaikadest."],
+["Milline väide selgrootute kohta on õige?", ["Kõigil on selgroog", "Selgroog puudub", "Kõigil on lubikoda", "Kõik elavad maismaal"], 1, "Selgrootutel puudub selgroog; nende toes võib olla eri tüüpi või puududa."],
+["Kuidas saavad käsnad toitu?", ["Püüavad linde", "Filtreerivad veest toiduosakesi", "Söövad ainult taimi maismaal", "Neil pole toitumist"], 1, "Vesi liigub läbi käsna keha ja käsn filtreerib sellest toiduosakesi."],
+["Mis on käsna keha iseloomulik tunnus?", ["Palju poore, millest vesi läbi liigub", "Selgroog", "Kahepoolne koda", "Lüliline keha"], 0, "Käsnadel on palju poore ja vesi liigub läbi keha."],
+["Millised loomad kuuluvad ainuõõssete hulka?", ["Hüdralised, karikloomad, korallid ja merianemoonid", "Teod ja karbid", "Vihmaussid ja kaanid", "Meritähed ja merisiilikud"], 0, "Õppematerjalis on toodud need neli ainuõõssete rühma."],
+["Milleks kasutavad ainuõõssed kõrverakke?", ["Saagi püüdmiseks ja kaitseks", "Kesta ehitamiseks", "Vee filtreerimiseks", "Keha lülitamiseks"], 0, "Kõrverakud aitavad saaki püüda ja kaitsta."],
+["Kuidas tekivad korallrifid?", ["Korallide lubiskeletid kuhjuvad aja jooksul", "Need tekivad vihmaussidest", "Need koosnevad ainult liivast", "Need kasvavad metsas"], 0, "Korallide lubiskeletid võivad kolooniatena kuhjudes moodustada suuri riffe."],
+["Milline on üks korallriffide tähtsus?", ["Need pakuvad elupaika paljudele liikidele", "Need eemaldavad kõik mereloomad", "Need tekivad ainult järvedes", "Need ei mõjuta rannikut"], 0, "Rifid pakuvad elupaiku paljudele liikidele ja võivad kaitsta rannikut lainetuse eest."],
+["Milline tunnus on täiskasvanud okasnahksetel sageli?", ["Kiirjas sümmeetria", "Selgroog", "Spiraalne koda", "Keha koosneb alati lülidest"], 0, "Täiskasvanud okasnahksetel on sageli kiirjas sümmeetria."],
+["Milline loom on okasnahkne?", ["Merisiilik", "Tigu", "Hüdra", "Vihmauss"], 0, "Merisiilik kuulub okasnahksete hulka."],
+["Milline võrdlus ussirühmade kohta on õige?", ["Lameussid on lamedad, ümarussid silindrilised, rõngusside keha on lüliline", "Kõigil ussidel on koda", "Kõigil ussidel on kõrverakud", "Kõik ussid on selgroogsed"], 0, "Õppematerjalis võrreldakse lameusse, ümarusse ja rõngusse nende keha kuju ja ehituse järgi."],
+["Milline loom on rõnguss?", ["Vihmauss", "Meritäht", "Tigu", "Hüdra"], 0, "Vihmauss on rõnguss."],
+["Kuidas erinevad teo ja karbi kojad?", ["Teol on tavaliselt üks spiraalne koda, karbil kahe poolega koda", "Teol on alati kahe poolega koda", "Karbil on alati üks spiraalne koda", "Kummalgi ei ole koda"], 0, "Teo koda on tavaliselt ühes tükis ja spiraalne; karbi koda koosneb kahest poolmest."],
+["Mida teevad paljud karbid veekogus?", ["Filtreerivad vett", "Ehitatavad selgroogu", "Püüavad linde", "Moodustavad alati korallriffe"], 0, "Paljud karbid filtreerivad vett."],
+["Milline sümmeetria võib selgrootutel esineda?", ["Kahepoolne või kiirjas, mõnel puudub kindel sümmeetria", "Ainult kahepoolne", "Ainult kiirjas", "Alati puudub"], 0, "Selgrootute keha sümmeetria on rühmiti erinev."],
+["Milline väide selgrootute vereringe kohta on õige?", ["Kõigil on samasugune suletud vereringe", "Vereringe võib rühmiti erineda või eraldi süsteem puududa", "Kõigil on neljakambriline süda", "Kõigil puudub vereringe"], 1, "Selgrootute vereringe on mitmekesine."]
 ];
 let qi=0,score=0,mistakes=[],answered=false;
 function renderQuiz(){
@@ -917,6 +1001,84 @@ document.addEventListener('click', function(event) {
   }
   answerFeedback.textContent = correct ? 'Õige! Tubli — mõtle, miks see vastus sobib.' : 'Proovi uuesti. Mõtle, kas tekib uus aine või milline tegur reaktsiooni kiirendab.';
   answerFeedback.style.color = correct ? '#26734d' : '#a34a25';
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  setTimeout(function(){ openChemistryApp(); }, 0);
+});
+</script>
+
+<script>
+const climateTopicBank = [
+  ["ilm","Mille poolest erineb ilm kliimast?",["Ilm on lühiajaline, kliima kirjeldab pikaajalist mustrit","Need tähendavad sama","Kliima muutub iga tunni järel","Ilm kirjeldab ainult aastaaegu"],0,"Ilm kirjeldab lühiajalisi tingimusi, kliima paiga pikaajalisi ilmaolusid."],
+  ["ilm","Milline kirjeldus sobib ilmaga?",["Täna sajab vihma ja puhub tuul","Piirkonnas on tavaliselt külmad talved","Paiga pikaajaline sademete muster","Aastakümnete keskmine temperatuur"],0,"Ilm kirjeldab hetke või lühikese aja tingimusi."],
+  ["ilm","Milline kirjeldus sobib kliimaga?",["Tänane äike","Tunni jooksul muutunud tuul","Paiga pikaajaline temperatuuride ja sademete iseloom","Üks vihmahoog"],2,"Kliima kirjeldab pikaajalisi ilmastikuolusid."],
+  ["atmos","Miks on atmosfäär eluks oluline?",["See aitab luua eluks sobivaid tingimusi ja kaitseb Maad","See koosneb ainult hapnikust","See peatab kogu päikesekiirguse","See on ainult pilvede kiht"],0,"Atmosfäär on oluline eluks sobivate tingimuste ja kaitse tõttu."],
+  ["atmos","Miks on osoonikiht oluline?",["See neelab suure osa kahjulikust UV-kiirgusest","See mõõdab õhutemperatuuri","See tekitab tuulelipu liikumise","See muudab sademed millimeetriteks"],0,"Osoonikiht aitab kaitsta elusloodust kahjuliku ultraviolettkiirguse eest."],
+  ["atmos","Millise kiirguse eest aitab osoonikiht elusloodust kaitsta?",["Ultraviolettkiirguse","Helilainete","Raadiolainete kõigi osade","Maa sisemuse soojuse"],0,"Osoonikiht neelab suure osa kahjulikust ultraviolettkiirgusest."],
+  ["kiirgus","Miks jõuab madalamatel laiustel päikesekiirgus sageli maapinnale otsemalt?",["Päike paistab kõrgemalt ja kiired langevad otsemalt","Seal on alati rohkem pilvi","Seal puudub atmosfäär","Seal ei ole ööd"],0,"Päikese kõrgus mõjutab kiirte langemisnurka ja maapinna soojenemist."],
+  ["kiirgus","Millal soojeneb maapind tavaliselt kiiremini?",["Selge ilmaga","Alati pilves ilmaga","Ainult öösel","Ainult uduga"],0,"Selge ilmaga jõuab maapinnani rohkem otsest päikesekiirgust."],
+  ["kiirgus","Millal jahtub maapind tavaliselt kiiremini?",["Selge ilmaga","Alati pilves ilmaga","Ainult keskpäeval","Ainult tugeva päikesega"],0,"Selge ilmaga pääseb maapinnalt soojuskiirgus paremini lahkuma."],
+  ["kiirgus","Milline pind soojeneb päikese käes sageli kiiremini?",["Tume asfalt","Kõik pinnad võrdselt","Ainult valge pind","Ükski pind ei soojene"],0,"Pinna värvus ja materjal mõjutavad soojenemist; tume asfalt soojeneb sageli kiiresti."],
+  ["diagramm","Mida näitab kliimadiagrammi temperatuurikõver?",["Temperatuuri muutumist kuude kaupa","Tuule suunda","Õhurõhku","Ainult aastast sademete hulka"],0,"Temperatuurikõver näitab temperatuuri kuude lõikes."],
+  ["diagramm","Mida näitavad kliimadiagrammi sademetulbad?",["Sademete hulka kuude kaupa","Temperatuuri","Tuule kiirust","Geograafilist laiust"],0,"Tulbad näitavad kuude sademete hulka."],
+  ["diagramm","Milline on Astana diagrammil märgitud aastane sademete hulk?",["401 mm","40,1 mm","4010 mm","4,2 mm"],0,"Astana diagrammil on aastaseks sademete hulgaks märgitud 401 mm."],
+  ["diagramm","Mida tähendab aasta temperatuuriamplituud?",["Kõige soojema ja kõige külmema kuu keskmise temperatuuri vahet","Aastane sademete kogus","Tuule suurim kiirus","Päevade arv aastas"],0,"Temperatuuriamplituud leitakse kõige soojema ja kõige külmema kuu keskmiste temperatuuride vahena."],
+  ["diagramm","Mida tuleb kliimadiagrammi põhjal leida kõigepealt?",["Kõige külmem ja kõige soojem kuu","Ainult riigi pealinn","Ainult tuule suund","Mõõteriista hind"],0,"Ülesanne palub leida kõige külmema ja soojema kuu ning nende keskmised temperatuurid."],
+  ["mootmine","Millega mõõdetakse õhutemperatuuri?",["Termomeetriga","Baromeetriga","Tuulelipuga","Vihmamõõtjaga"],0,"Õhutemperatuuri mõõdetakse termomeetriga."],
+  ["mootmine","Millega mõõdetakse õhurõhku?",["Baromeetriga","Termomeetriga","Tuulelipuga","Joonlauaga"],0,"Õhurõhku mõõdetakse baromeetriga."],
+  ["mootmine","Millega määratakse tuule suunda?",["Tuulelipuga","Termomeetriga","Vihmamõõtjaga","Kaaluga"],0,"Tuule suunda näitab tuulelipp."],
+  ["mootmine","Milline on tuule kiiruse ühik?",["m/s","mm","°C","kg"],0,"Tuule kiirust väljendatakse meetrites sekundis."],
+  ["mootmine","Milline on sademete hulga ühik?",["mm","m/s","°C","hPa"],0,"Sademete hulka väljendatakse millimeetrites."]
+];
+let clTopicQuestions=[],clTopicIndex=0,clTopicScore=0,clTopicAnswered=false;
+function clTopicShuffle(a){return a.slice().sort(()=>Math.random()-.5)}
+function clTopicStart(){
+ const chosen=document.getElementById("clTopicSelect").value;
+ clTopicQuestions=clTopicShuffle(climateTopicBank.filter(q=>chosen==="all"||q[0]===chosen));
+ clTopicIndex=0;clTopicScore=0;clTopicAnswered=false;
+ document.getElementById("clTopicResult").style.display="none";
+ document.getElementById("clTopicStart").textContent="Alusta uuesti / vali teine teema";
+ clTopicRender();
+}
+function clTopicRender(){
+ const q=clTopicQuestions[clTopicIndex];if(!q)return;
+ document.getElementById("clTopicCount").textContent=`Küsimus ${clTopicIndex+1} / ${clTopicQuestions.length} · ${clTopicScore} punkti`;
+ document.getElementById("clTopicBar").style.width=(clTopicIndex/clTopicQuestions.length*100)+"%";
+ document.getElementById("clTopicQuestion").textContent=q[1];
+ const area=document.getElementById("clTopicAnswers");area.replaceChildren();
+ q[2].map((v,i)=>({v,i})).sort(()=>Math.random()-.5).forEach(o=>{
+   const b=document.createElement("button");b.type="button";b.className="climate-option";b.textContent=o.v;
+   b.style.cssText="display:block;width:100%;padding:12px;border-radius:10px;border:1px solid #cbd5e1;background:#fff;color:#172033;text-align:left;cursor:pointer";
+   b.addEventListener("click",()=>clTopicAnswer(o.i,b));area.appendChild(b);
+ });
+ document.getElementById("clTopicFeedback").textContent="Vali vastus.";
+ document.getElementById("clTopicNext").disabled=true;clTopicAnswered=false;
+}
+function clTopicAnswer(i,b){
+ if(clTopicAnswered)return;clTopicAnswered=true;const q=clTopicQuestions[clTopicIndex],area=document.getElementById("clTopicAnswers");
+ const correct=i===q[3];
+ [...area.children].forEach(btn=>{btn.disabled=true;if(btn.textContent===q[2][q[3]])btn.style.border="2px solid #16805d"});
+ if(correct){clTopicScore++;b.style.background="#dcfce7";document.getElementById("clTopicFeedback").textContent="Õige! "+q[4]}
+ else{b.style.background="#fee2e2";document.getElementById("clTopicFeedback").textContent="Õige vastus: "+q[2][q[3]]+". "+q[4]}
+ document.getElementById("clTopicNext").disabled=false;
+}
+function clTopicNext(){
+ if(clTopicIndex<clTopicQuestions.length-1){clTopicIndex++;clTopicRender();return}
+ document.getElementById("clTopicBar").style.width="100%";
+ document.getElementById("clTopicQuestion").textContent="Test lõpetatud!";
+ document.getElementById("clTopicAnswers").replaceChildren();
+ document.getElementById("clTopicNext").disabled=true;
+ const r=document.getElementById("clTopicResult");r.style.display="block";
+ r.innerHTML=`<h4>Tulemus: ${clTopicScore} / ${clTopicQuestions.length}</h4><p>${clTopicScore===clTopicQuestions.length?"Väga tubli! Kõik vastused õiged.":"Vaata selgitused üle ja proovi uuesti."}</p>`;
+}
+document.addEventListener("DOMContentLoaded",()=>{
+ const start=document.getElementById("clTopicStart"),next=document.getElementById("clTopicNext");
+ if(start)start.addEventListener("click",clTopicStart);
+ if(next)next.addEventListener("click",clTopicNext);
 });
 </script>
 
